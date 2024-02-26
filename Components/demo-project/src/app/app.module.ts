@@ -13,6 +13,6 @@ import { ArticleComponent } from './article/article.component';
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ArticleComponent]
 })
 export class AppModule { }

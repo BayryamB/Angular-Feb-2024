@@ -1,6 +1,6 @@
 import { data } from "./seed";
 import { Article } from "../models/article.model";
-export class ArticleData {
+class ArticleData {
     getData() : Article[] {
         
     let articles : Article[] = [];
@@ -13,3 +13,5 @@ export class ArticleData {
     return articles;
     }
 }
+
+export { ArticleData }
