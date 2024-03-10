@@ -9,12 +9,14 @@ import { Theme } from '../types/theme';
 })
 export class ThemesComponent implements OnInit {
   themes: Theme[] = [];
+  isLoading: boolean = true;
 
   constructor(private api: ApiService) { }
   ngOnInit(): void {
     this.api.getThemes().subscribe((themes) => {
       console.log(themes);
       this.themes = themes;
+      this.isLoading = false;
     });
   }
 }
