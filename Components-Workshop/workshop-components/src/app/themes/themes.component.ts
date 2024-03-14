@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Theme } from '../types/theme';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-themes',
@@ -11,7 +12,7 @@ export class ThemesComponent implements OnInit {
   themes: Theme[] = [];
   isLoading: boolean = true;
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private userService: UserService) { }
   ngOnInit(): void {
     this.api.getThemes().subscribe((themes) => {
       console.log(themes);
@@ -19,4 +20,16 @@ export class ThemesComponent implements OnInit {
       this.isLoading = false;
     });
   }
+  get isLoggedIn(): boolean {
+    return this.userService.isLogedIn;
+  }
+
+  isSubscribedUser(theme: Theme): boolean {
+    const isSubscribed = theme.subscribers.includes(this.userService.user?.id || '');
+    console.log(this.userService.user?.id);
+    
+    return isSubscribed;
+  }
+  
+  
 }

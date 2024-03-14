@@ -2,7 +2,7 @@
     <div *ngIf="isLoading">
         <app-loader />
     </div>
-    <div class="themes-msg">
+    <div *ngIf="!isLoggedIn" class="themes-msg">
         <app-welcome-msg />
     </div>
     <div class="theme-title">
@@ -21,7 +21,8 @@
                             </div>
                         </div>
                         <div class="subscribers">
-                            <!-- <button class="subscribe">Subscribe</button> -->
+                            <button *ngIf="isLoggedIn && !isSubscribedUser(theme)" class="subscribe">Subscribe</button>
+                            <button *ngIf="isLoggedIn && isSubscribedUser(theme)" class="unsubscribe">Unsubscribe</button>
                             <p>Subscribers: <span>{{theme.subscribers.length}}</span></p>
                         </div>
                     </div>

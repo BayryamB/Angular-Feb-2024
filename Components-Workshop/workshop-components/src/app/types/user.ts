@@ -12,6 +12,7 @@ export interface User {
 }
 
 export interface UserAuth {
+  id: string;
   username: string;
   email: string;
   tel: string;
