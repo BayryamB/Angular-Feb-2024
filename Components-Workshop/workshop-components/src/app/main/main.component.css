@@ -11,6 +11,7 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: space-evenly;
+    gap: 2em;
 }
 
 aside {

@@ -2,6 +2,9 @@
     <div *ngIf="isLoading">
         <app-loader />
     </div>
+    <div class="themes-msg">
+        <app-welcome-msg />
+    </div>
     <div class="theme-title">
         <!-- theme component  -->
         <div *ngFor="let theme of themes" class="theme-container">
