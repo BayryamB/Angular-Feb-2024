@@ -13,6 +13,16 @@
                 </li>
             </ul>
         </div>
+        <div *ngIf="isLogedIn" class="mini-navbar">
+            <ul>
+                <li routerLink="/profile">
+                    <a>{{firstName}}'s Profile</a>
+                </li>
+                <li (click)="logout()">
+                    <a>Logout</a>
+                </li>
+            </ul>
+        </div>
     </div>
     <nav>
         <ul>
