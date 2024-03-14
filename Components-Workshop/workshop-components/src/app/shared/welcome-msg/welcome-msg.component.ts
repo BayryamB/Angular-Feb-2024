@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
-
+import { UserRoutingModule } from 'src/app/user/user-routing.module';
 @Component({
   selector: 'app-welcome-msg',
   templateUrl: './welcome-msg.component.html',

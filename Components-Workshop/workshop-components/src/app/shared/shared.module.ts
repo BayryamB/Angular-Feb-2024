@@ -11,7 +11,8 @@ import { RouterModule } from '@angular/router';
     WelcomeMsgComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     LoaderComponent,
