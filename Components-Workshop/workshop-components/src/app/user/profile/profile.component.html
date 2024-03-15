@@ -1,18 +1,18 @@
 <!-- homepage -->
 <div class="container">
-    <div class="profile"><img src="./profile.png" alt="default user">
+    <div class="profile"><img src="../../../assets/profile.png" alt="default user">
         <h3>User Info:</h3>
         <div class="flex">
             <p>Username: </p>
-            <p>Johny</p>
+            <p>{{user?.username}}</p>
         </div>
         <div class="flex">
             <p>Email: </p>
-            <p>john.doegmail.com</p>
+            <p>{{user?.email}}</p>
         </div>
         <div class="flex">
             <p>Phone: </p>
-            <p>+359 885 888 888</p>
+            <p>{{user?.tel}}</p>
         </div>
         <button class="edit-button">Edit</button>
     </div>

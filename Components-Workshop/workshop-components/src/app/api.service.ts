@@ -25,4 +25,9 @@ export class ApiService {
     }
     return this.http.get<Post[]>(url);
   }
+
+  getUserInfo(){
+
+    return localStorage.getItem('[user]');
+  }
 }

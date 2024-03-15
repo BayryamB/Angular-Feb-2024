@@ -26,10 +26,7 @@ export class ThemesComponent implements OnInit {
 
   isSubscribedUser(theme: Theme): boolean {
     const isSubscribed = theme.subscribers.includes(this.userService.user?.id || '');
-    console.log(this.userService.user?.id);
-    
     return isSubscribed;
   }
-  
   
 }
