@@ -26,6 +26,12 @@ export class ApiService {
     return this.http.get<Post[]>(url);
   }
 
+  createTheme(themeName: string, postText: string){
+    const {apiUrl} = environment;
+    return this.http.post<Theme>(`${apiUrl}/themes`, {themeName, postText});
+    
+  }
+
   getUserInfo(){
 
     return localStorage.getItem('[user]');
