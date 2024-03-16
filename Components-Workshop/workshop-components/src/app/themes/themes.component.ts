@@ -6,16 +6,15 @@ import { UserService } from '../user/user.service';
 @Component({
   selector: 'app-themes',
   templateUrl: './themes.component.html',
-  styleUrls: ['./themes.component.css']
+  styleUrls: ['./themes.component.css'],
 })
 export class ThemesComponent implements OnInit {
   themes: Theme[] = [];
   isLoading: boolean = true;
 
-  constructor(private api: ApiService, private userService: UserService) { }
+  constructor(private api: ApiService, private userService: UserService) {}
   ngOnInit(): void {
     this.api.getThemes().subscribe((themes) => {
-      console.log(themes);
       this.themes = themes;
       this.isLoading = false;
     });
@@ -25,8 +24,9 @@ export class ThemesComponent implements OnInit {
   }
 
   isSubscribedUser(theme: Theme): boolean {
-    const isSubscribed = theme.subscribers.includes(this.userService.user?.id || '');
+    const isSubscribed = theme.subscribers.includes(
+      this.userService.user?.id || ''
+    );
     return isSubscribed;
   }
-  
 }

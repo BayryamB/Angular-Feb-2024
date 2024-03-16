@@ -5,16 +5,13 @@ import { User } from 'src/app/types/user';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent {
   user: User | undefined;
-  constructor( private api: ApiService) { }
+  constructor(private api: ApiService) {}
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.user = JSON.parse(this.api.getUserInfo() || '{}');
-    console.log(this.user);
-    
-    
   }
 }
