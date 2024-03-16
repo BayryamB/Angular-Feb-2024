@@ -29,8 +29,8 @@
                 </div>
             </div>
             <div class="footer">
-                <!-- <i class="fas fa-thumbs-up"></i>
-                <i class="fas fa-thumbs-down"></i> -->
+                <i *ngIf="isLogedIn() && !isLiked" class="fas fa-thumbs-up"></i>
+                <i *ngIf="isLogedIn() && !!isLiked" class="fas fa-thumbs-down"></i>
                 <p><span>{{post.likes.length}}</span> likes</p>
             </div>
         </div>

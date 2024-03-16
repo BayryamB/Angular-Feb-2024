@@ -11,6 +11,8 @@ import { UserService } from 'src/app/user/user.service';
 export class CurrentThemeComponent implements OnInit {
   theme = {} as Theme;
   path: string | undefined = '';
+  isLiked: boolean = this.likeChecker();
+
   constructor(
     private api: ApiService,
     private userService: UserService,
@@ -22,7 +24,25 @@ export class CurrentThemeComponent implements OnInit {
 
     this.api.getTheme(this.path as string).subscribe((theme) => {
       this.theme = theme;
+      console.log(this.theme);
     });
+  }
+
+  likeChecker(): boolean {
+    const userId: string | undefined = this.userService.user?.id;
+    console.log(userId);
+    const posts = this.theme.posts;
+    if (!posts) return false;
+    for (const post of posts) {
+      for (const likes of post.likes) {
+        if (userId) {
+          if (likes.includes(userId)) {
+            return true;
+          }
+        }
+      }
+    }
+    return true;
   }
 
   isLogedIn() {
