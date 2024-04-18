@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { User } from 'src/app/types/user';
 
@@ -14,4 +15,6 @@ export class ProfileComponent {
   ngOnInit(): void {
     this.user = JSON.parse(this.api.getUserInfo() || '{}');
   }
+
+  editProfile() {}
 }
